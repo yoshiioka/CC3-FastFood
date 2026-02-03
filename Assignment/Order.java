@@ -2,16 +2,16 @@ public class Order {
     public int orderId;
     public FoodItem foodItem;
 
-    public Order(int orderId, FoodItem foodItem) {
+    public Order(int orderId, double itemPrice) {
         this.orderId = orderId;
-        this.foodItem = foodItem;
+        this.foodItem = new FoodItem(itemPrice);
     }
 
     public double calculateTotal() {
-        return foodItem.getPrice();
+        return this.foodItem.getPrice();
     }
 
     public String identify() {
-        return "Order ID: " + orderId;
+        return "I am the Order Class. I manage food items and the total bill.";
     }
 }
