@@ -8,10 +8,21 @@ public class Customer {
 
     public void placeOrder(Order order) {
         this.order = order;
-        System.out.println(name + " placed an order.");
     }
 
     public String identify() {
-        return "Customer name: " + name;
+        return "I am the Customer Class. I represent the person ordering.";
+    }
+
+    public String getFullDetails() {
+        String details = "--- System Identity Report ---\n" +
+                         this.identify() + "\n" +
+                         this.order.identify() + "\n" +
+                         this.order.foodItem.identify() + "\n\n" +
+                         "--- Transaction Details ---\n" +
+                         "Customer Name: " + this.name + "\n" +
+                         "Order ID: " + this.order.orderId + "\n" +
+                         "Total Price: $" + String.format("%.2f", this.order.calculateTotal());
+        return details;
     }
 }
