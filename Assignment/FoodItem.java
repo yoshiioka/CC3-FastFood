@@ -6,10 +6,10 @@ public class FoodItem {
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public String identify() {
-        return "FoodItem with price: " + price;
+        return "I am the FoodItem Class. I hold the price of a product.";
     }
 }
